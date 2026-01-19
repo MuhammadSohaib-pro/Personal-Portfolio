@@ -22,7 +22,8 @@ const about = {
     "I have demonstrated my abilities through 4+ deployed projects including multi-API platforms, financial tracking systems, and interactive user interfaces. I have a strong foundation in component architecture, React Router, and modern CSS frameworks.",
   description_3:
     "I'm eager to contribute my technical skills in a collaborative development environment and continue growing as a developer.",
-  resume: "https://example.com",
+  resume:
+    "https://docs.google.com/document/d/1mS91ig-LklDjLiuP6Fef4DIMgzup2xW7/edit?usp=drive_link&ouid=116157002439243558652&rtpof=true&sd=true",
   social: {
     linkedin: "",
     github: "https://github.com/MuhammadSohaib-pro",
