@@ -1,15 +1,14 @@
 import { header } from "../../portfolio";
 import Navbar from "../Navbar/Navbar";
-import "./Header.css";
 
 const Header = () => {
   const { homepage, title } = header;
 
   return (
-    <header className="header center">
-      <h3>
+    <header className="px-4 container h-24 md:h-32 w-full mx-auto my-0 flex items-center justify-between">
+      <h3 className="text-2xl font-bold">
         {homepage ? (
-          <a href={homepage} className="link">
+          <a href={homepage} className="link text-primary relative">
             {title}
           </a>
         ) : (

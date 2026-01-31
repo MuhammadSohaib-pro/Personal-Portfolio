@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import "./ScrollToTop.css";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,8 +13,8 @@ const ScrollToTop = () => {
   }, []);
 
   return isVisible ? (
-    <div className="scroll-top">
-      <a href="#top" aria-label="top">
+    <div className="hidden lg:flex bg-transparent fixed bottom-10 right-10">
+      <a href="#top" className="link" aria-label="top">
         <ArrowUpwardIcon fontSize="large" />
       </a>
     </div>

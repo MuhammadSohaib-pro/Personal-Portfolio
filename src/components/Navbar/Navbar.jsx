@@ -4,8 +4,8 @@ import WbSunnyRoundedIcon from "@mui/icons-material/WbSunnyRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { ThemeContext } from "../../contexts/theme";
-import { projects, skills, contact } from "../../portfolio";
-import "./Navbar.css";
+import { projects, skills, contact, experiences } from "../../portfolio";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext);
@@ -14,17 +14,28 @@ const Navbar = () => {
   const toggleNavList = () => setShowNavList(!showNavList);
 
   return (
-    <nav className="center nav">
+    <nav className="flex items-center gap-2 justify-center">
+      {/* Mobile Nav */}
       <ul
-        style={{ display: showNavList ? "flex" : null }}
-        className="nav__list"
+        className={`${showNavList ? "bg-background mt-24 flex md:hidden flex-col justify-center gap-2 items-center fixed inset-0 w-full h-full z-10" : "hidden"}`}
       >
+        {experiences.length ? (
+          <li className="ml-6">
+            <a
+              href="#experiences"
+              onClick={toggleNavList}
+              className="link hover:text-primary text-foreground font-medium lowercase relative"
+            >
+              Experiences
+            </a>
+          </li>
+        ) : null}
         {projects.length ? (
-          <li className="nav__list-item">
+          <li className="ml-6">
             <a
               href="#projects"
               onClick={toggleNavList}
-              className="link link--nav"
+              className="link hover:text-primary text-foreground font-medium lowercase relative"
             >
               Projects
             </a>
@@ -32,11 +43,11 @@ const Navbar = () => {
         ) : null}
 
         {skills.length ? (
-          <li className="nav__list-item">
+          <li className="ml-6">
             <a
               href="#skills"
               onClick={toggleNavList}
-              className="link link--nav"
+              className="link hover:text-primary text-foreground font-medium lowercase relative"
             >
               Skills
             </a>
@@ -44,11 +55,56 @@ const Navbar = () => {
         ) : null}
 
         {contact.email ? (
-          <li className="nav__list-item">
+          <li className="ml-6">
             <a
               href="#contact"
               onClick={toggleNavList}
-              className="link link--nav"
+              className="link hover:text-primary text-foreground font-medium lowercase relative"
+            >
+              Contact
+            </a>
+          </li>
+        ) : null}
+      </ul>
+      {/* Desktop Nav */}
+      <ul className="hidden md:flex mr-6">
+        {experiences.length ? (
+          <li className="ml-6">
+            <a
+              href="#experiences"
+              className="link hover:text-primary text-foreground font-medium lowercase relative"
+            >
+              Experiences
+            </a>
+          </li>
+        ) : null}
+        {projects.length ? (
+          <li className="ml-6">
+            <a
+              href="#projects"
+              className="link hover:text-primary text-foreground font-medium lowercase relative"
+            >
+              Projects
+            </a>
+          </li>
+        ) : null}
+
+        {skills.length ? (
+          <li className="ml-6">
+            <a
+              href="#skills"
+              className="link hover:text-primary text-foreground font-medium lowercase relative"
+            >
+              Skills
+            </a>
+          </li>
+        ) : null}
+
+        {contact.email ? (
+          <li className="ml-6">
+            <a
+              href="#contact"
+              className="link hover:text-primary text-foreground font-medium lowercase relative"
             >
               Contact
             </a>
@@ -56,23 +112,22 @@ const Navbar = () => {
         ) : null}
       </ul>
 
-      <button
-        type="button"
+      <Button
         onClick={toggleTheme}
-        className="btn btn--icon nav__theme"
-        aria-label="toggle theme"
+        className={"cursor-pointer hover:text-primary"}
+        variant="ghost"
       >
         {themeName === "dark" ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-      </button>
+      </Button>
 
-      <button
-        type="button"
+      <Button
         onClick={toggleNavList}
-        className="btn btn--icon nav__hamburger"
+        className={"cursor-pointer hover:text-primary md:hidden"}
         aria-label="toggle navigation"
+        variant="secondary"
       >
         {showNavList ? <CloseIcon /> : <MenuIcon />}
-      </button>
+      </Button>
     </nav>
   );
 };

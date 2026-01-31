@@ -4,6 +4,10 @@ import CinemaScope from "./assets/cinema-scope.png";
 import ExpenseTracker from "./assets/expense-tracker.png";
 import MediaFinder from "./assets/media-finder.png";
 import Todo from "./assets/todo.png";
+import MotorCut from "./assets/motorcut.png";
+import Vibanc from "./assets/vibanc.png";
+import ShopEase from "./assets/shopease.png";
+
 const header = {
   // all the properties are optional - can be left empty or deleted
   homepage: "#",
@@ -25,12 +29,65 @@ const about = {
   resume:
     "https://docs.google.com/document/d/1mS91ig-LklDjLiuP6Fef4DIMgzup2xW7/edit?usp=drive_link&ouid=116157002439243558652&rtpof=true&sd=true",
   social: {
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/muhammad-sohaib-pro/",
     github: "https://github.com/MuhammadSohaib-pro",
     whatsapp: "https://wa.me/97433425140",
   },
 };
+
+const experiences = [
+  {
+    role: "Frontend Developer (React / Next.js)",
+    company: "CorTechSols",
+    duration: "Jan 2024 – Present",
+    location: "Islamabad, Pakistan (Hybrid)",
+    description: [
+      "Developed 5+ responsive web applications using React/Next.js, focusing on high-performance solutions with modern UI/UX standards.",
+      "Designed and implemented 10+ complex UI components, and reusable React components with pixel-perfect, responsive design across all devices and browsers.",
+      "Integrated REST APIs endpoints while implementing Redux Toolkit state management.",
+    ],
+  },
+  {
+    role: "Frontend Developer (React / Next.js)",
+    company: "Fiverr",
+    duration: "May 2023 – December 2023",
+    location: "Freelance",
+    description: [
+      "Built full-featured e-commerce platforms with React.js, TypeScript, and Redux Toolkit.",
+      "Implemented advanced product filtering/search with debouncing, category navigation, and real-time cart updates.",
+      "Developed responsive UI using Tailwind CSS and shadcn/ui component library.",
+    ],
+  },
+];
+
 const projects = [
+  {
+    name: "MotorCut",
+    description:
+      "AI-powered web application for enhancing vehicle images, increasing engagement by 50% and user satisfaction by 40%. Built with React.js, Firebase Authentication, and Redux Toolkit for efficient state management.",
+    stack: ["React.js", "Redux Toolkit", "Firebase", "REST APIs"],
+    sourceCode: "",
+    livePreview: "https://app.motor-cut.com/",
+    image: MotorCut,
+  },
+  {
+    name: "Vibanc",
+    description:
+      "Responsive marketplace platform built with Next.js, Tailwind CSS, and Shadcn UI. Features dynamic profile switching between Buyer and Seller modes with Next Auth integration supporting Google, LinkedIn, and credential-based authentication.",
+    stack: ["Next.js", "Tailwind CSS", "Shadcn UI", "Next Auth"],
+    sourceCode: "",
+    livePreview: "https://vibanc.com/",
+    image: Vibanc,
+  },
+  {
+    name: "ShopEase",
+    description:
+      "Full-featured e-commerce platform with shopping cart, wishlist, order management, and checkout flow. Features advanced product filtering with debouncing, real-time cart updates, and localStorage persistence.",
+    stack: ["React.js", "TypeScript", "Redux Toolkit", "Tailwind CSS"],
+    sourceCode: "https://github.com/MuhammadSohaib-pro/shopease",
+    livePreview: "https://shopease-zeta-ten.vercel.app/",
+    image: ShopEase,
+  },
   {
     name: "Media Finder",
     description:
@@ -68,7 +125,7 @@ const projects = [
     image: ExpenseTracker,
   },
   {
-    name: "Todo Management App",
+    name: "Todo Management",
     description:
       "Task management app with advanced filtering (all/active/completed), statistics tracking, and component-based architecture. Features Bootstrap Icons with clean UI and reusable components.",
     stack: ["React.js", "Bootstrap", "Bootstrap Icons", "JavaScript"],
@@ -76,7 +133,6 @@ const projects = [
     livePreview: "https://todo-app-fawn-chi-47.vercel.app/",
     image: Todo,
   },
-
   {
     name: "Corso",
     description:
@@ -110,4 +166,4 @@ const contact = {
   phone: "+974 3342 5140",
 };
 
-export { header, about, projects, skills, contact };
+export { header, about, experiences, projects, skills, contact };

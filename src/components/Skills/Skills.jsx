@@ -1,22 +1,21 @@
-import uniqid from 'uniqid'
-import { skills } from '../../portfolio'
-import './Skills.css'
+import uniqid from "uniqid";
+import { skills } from "../../portfolio";
 
 const Skills = () => {
-  if (!skills.length) return null
+  if (!skills.length) return null;
 
   return (
-    <section className='section skills' id='skills'>
-      <h2 className='section__title'>Skills</h2>
-      <ul className='skills__list'>
+    <section className="mt-16 md:mt-20 skills" id="skills">
+      <h2 className="text-4xl font-bold text-center mb-10 uppercase">Skills</h2>
+      <ul className=" max-w-md w-full mx-auto my-0 flex flex-wrap items-center justify-center">
         {skills.map((skill) => (
-          <li key={uniqid()} className='skills__list-item btn btn--plain'>
+          <li key={uniqid()} className="m-2 btn btn--plain">
             {skill}
           </li>
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
